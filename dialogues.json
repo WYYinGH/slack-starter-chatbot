@@ -1,0 +1,12 @@
+{
+  "dialogues": [
+    {
+      "keywords":["apple", "orange", "banana"],
+      "response":["contains apple, orange, and banana"]
+    },
+    {
+      "keywords":[],
+      "response":[]
+    }
+  ]
+}

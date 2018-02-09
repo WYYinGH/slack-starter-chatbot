@@ -9,6 +9,8 @@ respond immediately with a single line response.
 
 */
 
+console.log("sample_hears test");
+
 module.exports = function(controller) {
 
     controller.hears(['^hello$'], 'direct_message,direct_mention', function(bot, message) {
@@ -20,7 +22,7 @@ module.exports = function(controller) {
         if (matchKeywords(message.text) )
             bot.reply(message, "sentence contains graduation and subject");
         else
-            bot.reply(message, "you said " + message.text);
+            bot.reply(message, "I don't understand");
     });
 
     controller.hears(['^say (.*)','^say'], 'direct_message,direct_mention', function(bot, message) {
@@ -29,6 +31,22 @@ module.exports = function(controller) {
         } else {
             bot.reply(message, 'I will repeat whatever you say.')
         }
+    });
+
+
+    controller.hears(['color'], 'direct_message,direct_mention', function(bot, message) {
+
+        bot.startConversation(message, function(err, convo) {
+            convo.say('This is an example of using convo.ask with a single callback.');
+
+            convo.ask('What is your favorite color?', function(response, convo) {
+
+                convo.say('Cool, I like ' + response.text + ' too!');
+                convo.next();
+
+            });
+        });
+
     });
 };
 
