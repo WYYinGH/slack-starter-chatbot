@@ -25,13 +25,11 @@ module.exports = function(controller) {
 
     controller.hears(['^say (.*)','^say'], 'direct_message,direct_mention', function(bot, message) {
         if (message.match[1]) {
-             bot.reply(message, "ok, " + message.match[1]);
+             bot.reply(message, "ok, " + message.match[1]);//match[1] is (.*), match[0] is whole sentence
         } else {
             bot.reply(message, 'I will repeat whatever you say.')
         }
     });
-
-
 };
 
 var list = ['graduation', 'subject'];
