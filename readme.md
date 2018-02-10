@@ -20,6 +20,6 @@ After first setup, you need to do few things every time you start coding
 2. copy "https..." from ngrok
 3. Go to "api.slack.com", click your slack app, find your bot
 4. paste the link + "/oauth" on "OAuth & Permission"
-5. go to "Event Subscription" paste the link + "/slack/receive"
+5. go to "Event Subscription" and "Interactive component" paste the link + "/slack/receive"
  
 If you want to test after changed, you should restart npm

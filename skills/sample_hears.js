@@ -25,6 +25,7 @@ module.exports = function(controller) {
             bot.reply(message, "I don't understand");
     });
 
+
     controller.hears(['^say (.*)','^say'], 'direct_message,direct_mention', function(bot, message) {
         if (message.match[1]) {
              bot.reply(message, "ok, " + message.match[1]);//match[1] is (.*), match[0] is whole sentence
